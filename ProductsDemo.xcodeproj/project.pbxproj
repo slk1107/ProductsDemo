@@ -17,6 +17,10 @@
 		E2B486E3290DEA7800358AB9 /* ProductsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B486E2290DEA7800358AB9 /* ProductsDemoTests.swift */; };
 		E2B486ED290DEA7800358AB9 /* ProductsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B486EC290DEA7800358AB9 /* ProductsDemoUITests.swift */; };
 		E2B486EF290DEA7800358AB9 /* ProductsDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B486EE290DEA7800358AB9 /* ProductsDemoUITestsLaunchTests.swift */; };
+		E2B486FD290DEB4E00358AB9 /* ProductDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B486FC290DEB4E00358AB9 /* ProductDao.swift */; };
+		E2B48700290DEB5E00358AB9 /* CartDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B486FF290DEB5E00358AB9 /* CartDao.swift */; };
+		E2B48703290DECD800358AB9 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48702290DECD800358AB9 /* Product.swift */; };
+		E2B48705290DEF4000358AB9 /* LocalProductsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48704290DEF4000358AB9 /* LocalProductsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		E2B486E8290DEA7800358AB9 /* ProductsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B486EC290DEA7800358AB9 /* ProductsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDemoUITests.swift; sourceTree = "<group>"; };
 		E2B486EE290DEA7800358AB9 /* ProductsDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E2B486FC290DEB4E00358AB9 /* ProductDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDao.swift; sourceTree = "<group>"; };
+		E2B486FF290DEB5E00358AB9 /* CartDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDao.swift; sourceTree = "<group>"; };
+		E2B48702290DECD800358AB9 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E2B48704290DEF4000358AB9 /* LocalProductsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalProductsManager.swift; sourceTree = "<group>"; };
 		ED89C4E1D1AFC509C06931A2 /* Pods-ProductsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductsDemoTests/Pods-ProductsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +104,6 @@
 				ED89C4E1D1AFC509C06931A2 /* Pods-ProductsDemoTests.debug.xcconfig */,
 				5232BDA64748B023314D268B /* Pods-ProductsDemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -135,6 +142,7 @@
 		E2B486D0290DEA7700358AB9 /* ProductsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E2B486FB290DEB4200358AB9 /* Model */,
 				E2B486D1290DEA7700358AB9 /* ProductsDemoApp.swift */,
 				E2B486D3290DEA7700358AB9 /* ContentView.swift */,
 				E2B486D5290DEA7800358AB9 /* Assets.xcassets */,
@@ -166,6 +174,33 @@
 				E2B486EE290DEA7800358AB9 /* ProductsDemoUITestsLaunchTests.swift */,
 			);
 			path = ProductsDemoUITests;
+			sourceTree = "<group>";
+		};
+		E2B486FB290DEB4200358AB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2B48701290DECC100358AB9 /* ServerObject */,
+				E2B486FE290DEB5300358AB9 /* Dao */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2B486FE290DEB5300358AB9 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				E2B486FC290DEB4E00358AB9 /* ProductDao.swift */,
+				E2B486FF290DEB5E00358AB9 /* CartDao.swift */,
+				E2B48704290DEF4000358AB9 /* LocalProductsManager.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		E2B48701290DECC100358AB9 /* ServerObject */ = {
+			isa = PBXGroup;
+			children = (
+				E2B48702290DECD800358AB9 /* Product.swift */,
+			);
+			path = ServerObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,7 +442,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2B486D4290DEA7700358AB9 /* ContentView.swift in Sources */,
+				E2B486FD290DEB4E00358AB9 /* ProductDao.swift in Sources */,
+				E2B48703290DECD800358AB9 /* Product.swift in Sources */,
+				E2B48700290DEB5E00358AB9 /* CartDao.swift in Sources */,
 				E2B486D2290DEA7700358AB9 /* ProductsDemoApp.swift in Sources */,
+				E2B48705290DEF4000358AB9 /* LocalProductsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
