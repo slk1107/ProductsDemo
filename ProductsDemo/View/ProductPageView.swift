@@ -23,29 +23,14 @@ struct ProductPageView: View {
                         Text(product.title)
                         Text("Brand: \(product.brand)")
                         Text(product.detail)
+                        
+                        let binding = Binding<Int>(get: {
+                            product.selectedQuantity
+                        }, set: {
+                            model.updateQuantity($0, by: product.id)
+                        })
                         HStack {
-                            Button(action: {
-                                let selectedQuantity = product.selectedQuantity
-                                if selectedQuantity > 1 {
-                                    model.updateQuantity(selectedQuantity - 1, by: product.id)
-                                }
-                            }, label: {
-                                Image(systemName: "minus.circle")
-                            })
-                            .buttonStyle(.borderless)
-                            
-                            Text("\(product.selectedQuantity)")
-                            
-                            Button(action: {
-                                let selectedQuantity = product.selectedQuantity
-                                if selectedQuantity < product.stock {
-                                    model.updateQuantity(selectedQuantity + 1, by: product.id)
-                                }
-                            }, label: {
-                                Image(systemName: "plus.circle")
-                            })
-                            .buttonStyle(.borderless)
-                            
+                            QuantitySelectionView(selectedQuantity: binding, limit: product.stock)
                             Spacer()
                             
                             Button(action: {
