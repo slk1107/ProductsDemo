@@ -44,7 +44,7 @@ class ProductsResponse: Decodable {
 class Product: Decodable {
     let id: Int
     let title, productDescription: String
-    let price: Int
+    let price: Double
     let discountPercentage, rating: Double
     let stock: Int
     let brand, category: String

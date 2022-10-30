@@ -46,18 +46,13 @@ class LocalProductsManager {
         }
     }
     
-    func addObserver(_ observer: Tokenable, forChange block: @escaping () -> Void) {
-        observers[observer.token] = block
+    func addObserver(_ observer: AnyObject, forChange block: @escaping () -> Void) {
+        let token = ObjectIdentifier(observer).hashValue
+        observers[token] = block
     }
     
-    func removeObserver(_ observer: Tokenable) {
-        observers.removeValue(forKey: observer.token)
+    func removeObserver(_ observer: AnyObject) {
+        let token = ObjectIdentifier(observer).hashValue
+        observers.removeValue(forKey: token)
     }
-}
-
-protocol Tokenable: AnyObject {
-    var token: Int {get set}
-}
-extension Tokenable {
-    var token: Int { ObjectIdentifier(self).hashValue }
 }
