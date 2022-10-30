@@ -26,6 +26,7 @@
 		E2B4870F290E07BF00358AB9 /* LocalCartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B4870E290E07BF00358AB9 /* LocalCartsManager.swift */; };
 		E2B48711290E0B1500358AB9 /* CartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48710290E0B1500358AB9 /* CartsView.swift */; };
 		E2B48713290E0F3600358AB9 /* QuantitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48712290E0F3600358AB9 /* QuantitySelectionView.swift */; };
+		E2B48715290E114900358AB9 /* CartsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48714290E114900358AB9 /* CartsPageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		E2B4870E290E07BF00358AB9 /* LocalCartsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCartsManager.swift; sourceTree = "<group>"; };
 		E2B48710290E0B1500358AB9 /* CartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartsView.swift; sourceTree = "<group>"; };
 		E2B48712290E0F3600358AB9 /* QuantitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelectionView.swift; sourceTree = "<group>"; };
+		E2B48714290E114900358AB9 /* CartsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartsPageViewModel.swift; sourceTree = "<group>"; };
 		ED89C4E1D1AFC509C06931A2 /* Pods-ProductsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductsDemoTests/Pods-ProductsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B48708290DF98000358AB9 /* ProductPageViewModel.swift */,
+				E2B48714290E114900358AB9 /* CartsPageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B48715290E114900358AB9 /* CartsPageViewModel.swift in Sources */,
 				E2B486FD290DEB4E00358AB9 /* ProductDao.swift in Sources */,
 				E2B4870C290E007D00358AB9 /* ProductPageView.swift in Sources */,
 				E2B48703290DECD800358AB9 /* ServerProduct.swift in Sources */,

@@ -9,9 +9,9 @@ import SwiftUI
 import Kingfisher
 
 struct CartsView: View {
-    @State var carts: [CartDao] = []
+    @StateObject var model = CartsPageViewModel()
     var body: some View {
-        List(carts, id: \.createdAt) { cart in
+        List(model.carts, id: \.createdAt) { cart in
             HStack {
                 if let product = cart.product {
                     KFImage(URL(string: product.thumbnail))
@@ -22,7 +22,7 @@ struct CartsView: View {
                     let binding = Binding<Int>(get: {
                         cart.quantity
                     }, set: {
-                        try? LocalCartsManager.shared.addToCart(product.id, quantity: $0)
+                        model.updateCart(quantity: $0, productId: product.id)
                     })
                     VStack(alignment: .leading) {
                         Text(product.title)
@@ -33,7 +33,7 @@ struct CartsView: View {
             }
         }
         .onAppear {
-            carts = (try? LocalCartsManager.shared.getCarts()) ?? []
+            model.setupCarts()
         }
     }
     
