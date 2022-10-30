@@ -14,7 +14,7 @@ class LocalCartsManager {
 
     init() {
         let realm = try! Realm()
-        let products = realm.objects(ProductDao.self)
+        let products = realm.objects(CartDao.self)
         notificationToken = products.observe {[weak self] changes in
             switch changes {
             case .initial:
