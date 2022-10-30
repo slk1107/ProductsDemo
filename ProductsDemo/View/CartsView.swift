@@ -35,6 +35,7 @@ struct CartsView: View {
                 
             }
         }
+        .navigationTitle("Shopping Cart")
         .onAppear {
             model.setupCarts()
         }
