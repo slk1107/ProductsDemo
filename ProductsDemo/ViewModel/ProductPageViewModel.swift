@@ -55,7 +55,7 @@ class ProductPageViewModel: ObservableObject {
             let results = try LocalProductsManager.shared.fetchProducts(start: 0, limit: Int.max)
             self.products = results.map {.init(from: $0)}
         } catch {
-            
+            // TODO: Error handling
         }
     }
     
@@ -68,13 +68,14 @@ class ProductPageViewModel: ObservableObject {
                 triggerServerUpdate(start: products.count, limit: pageSize)
             }
         } catch {
-            
+            // TODO: Error handling
         }
         
     }
     
     func triggerServerUpdate(start: Int, limit: Int) {
         // TODO: move this flow to ProductsManager
+        // TODO: Error handling
         Task {
             do {
                 let results = try await ProductsResponse.fetch(start: start, limit: limit)

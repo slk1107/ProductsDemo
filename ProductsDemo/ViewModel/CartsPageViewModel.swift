@@ -18,10 +18,12 @@ class CartsPageViewModel: ObservableObject {
     }
     
     func setupCarts() {
+        // TODO: Error handling
         carts = (try? LocalCartsManager.shared.getCarts()) ?? []
     }
     
     func updateCart(quantity:Int, productId: Int) {
+        // TODO: Error handling
         try? LocalCartsManager.shared.addToCart(productId, quantity: quantity)
     }
 }
