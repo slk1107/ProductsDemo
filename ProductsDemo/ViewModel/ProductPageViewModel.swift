@@ -97,6 +97,7 @@ class ProductPageViewModel: ObservableObject {
             return
         }
         try? LocalCartsManager.shared.addToCart(productId, quantity: q)
+        updateQuantity(0, by: productId)
     }
 }
 
