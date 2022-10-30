@@ -49,7 +49,7 @@ struct ProductPageView: View {
                             Spacer()
                             
                             Button(action: {
-                                
+                                model.addToCart(productId: product.id)
                             }, label: {
                                 Text("Add to cart")
                             })

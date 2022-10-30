@@ -77,7 +77,10 @@ class ProductPageViewModel: ObservableObject {
     }
     
     func addToCart(productId: Int) {
-        
+        guard  let q = products.first(where: {$0.id == productId})?.selectedQuantity else {
+            return
+        }
+        try? LocalCartsManager.shared.addToCart(productId, quantity: q)
     }
 }
 
