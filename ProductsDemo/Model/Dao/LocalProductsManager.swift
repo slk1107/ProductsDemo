@@ -17,12 +17,13 @@ class LocalProductsManager {
         notificationToken = products.observe {[weak self] changes in
             switch changes {
             case .initial:
-                break
+                self?.observers.forEach { _, block in
+                    block()
+                }
             case .update(_, _, _, _):
                 self?.observers.forEach { _, block in
                     block()
                 }
-                break
             case .error(_):
                 break
             }

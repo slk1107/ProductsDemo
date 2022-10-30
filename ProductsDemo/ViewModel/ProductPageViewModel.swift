@@ -48,8 +48,6 @@ class ProductPageViewModel: ObservableObject {
         LocalProductsManager.shared.addObserver(self, forChange: { [self] in
             updateProductsFromDB()
         })
-        updateProductsFromDB()
-        
     }
     
     func updateProductsFromDB() {

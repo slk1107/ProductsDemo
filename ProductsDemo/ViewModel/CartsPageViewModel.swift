@@ -15,8 +15,6 @@ class CartsPageViewModel: ObservableObject {
         LocalCartsManager.shared.addObserver(self, forChange: { [self] in
             setupCarts()
         })
-        setupCarts()
-        
     }
     
     func setupCarts() {
