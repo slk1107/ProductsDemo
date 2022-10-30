@@ -36,24 +36,22 @@ class LocalCartsManager {
         guard let product = realm.objects(ProductDao.self).where ({$0.id == productId}).first else {
             return
         }
-        
-        let cart: CartDao
-        if let existingCart = realm.objects(CartDao.self).where({
-            $0.product.id == productId
-        }).first {
-            cart = existingCart
-            cart.updatedAt = Date()
-            cart.quantity = quantity
-        } else {
-            cart = CartDao()
-            cart.createdAt = Date()
-            cart.updatedAt = Date()
-            cart.product = product
-            cart.quantity = quantity
-        }
-        
         try realm.write {
-            realm.add(cart, update: .modified)
+            let cart: CartDao
+            if let existingCart = realm.objects(CartDao.self).where({
+                $0.product.id == productId
+            }).first {
+                cart = existingCart
+                cart.updatedAt = Date()
+                cart.quantity = quantity
+            } else {
+                cart = CartDao()
+                cart.createdAt = Date()
+                cart.updatedAt = Date()
+                cart.product = product
+                cart.quantity = quantity
+                realm.add(cart)
+            }
         }
     }
     
