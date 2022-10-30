@@ -21,8 +21,10 @@ struct ProductPageView: View {
                     
                     VStack(alignment: .leading) {
                         Text(product.title)
+                            .font(.title2)
                         Text("Brand: \(product.brand)")
                         Text(product.detail)
+                            .foregroundColor(.gray)
                         Text("Price: \(product.price.currency)")
                         Text("Stock: \(product.stock)")
                         
