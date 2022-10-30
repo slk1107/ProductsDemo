@@ -11,7 +11,7 @@ import SwiftUI
 
 class CartDao: Object {
     @Persisted var updatedAt: Date
-    @Persisted var createdAt: Int8
+    @Persisted var createdAt: Date
     @Persisted var quantity: Int
     @Persisted var product: ProductDao?
 }

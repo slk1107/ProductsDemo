@@ -23,6 +23,7 @@
 		E2B48707290DF81200358AB9 /* ServerProductTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48706290DF81200358AB9 /* ServerProductTest.swift */; };
 		E2B48709290DF98000358AB9 /* ProductPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48708290DF98000358AB9 /* ProductPageViewModel.swift */; };
 		E2B4870C290E007D00358AB9 /* ProductPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B4870B290E007D00358AB9 /* ProductPageView.swift */; };
+		E2B4870F290E07BF00358AB9 /* LocalCartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B4870E290E07BF00358AB9 /* LocalCartsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E2B48706290DF81200358AB9 /* ServerProductTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProductTest.swift; sourceTree = "<group>"; };
 		E2B48708290DF98000358AB9 /* ProductPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageViewModel.swift; sourceTree = "<group>"; };
 		E2B4870B290E007D00358AB9 /* ProductPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageView.swift; sourceTree = "<group>"; };
+		E2B4870E290E07BF00358AB9 /* LocalCartsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCartsManager.swift; sourceTree = "<group>"; };
 		ED89C4E1D1AFC509C06931A2 /* Pods-ProductsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductsDemoTests/Pods-ProductsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +199,7 @@
 				E2B486FC290DEB4E00358AB9 /* ProductDao.swift */,
 				E2B486FF290DEB5E00358AB9 /* CartDao.swift */,
 				E2B48704290DEF4000358AB9 /* LocalProductsManager.swift */,
+				E2B4870E290E07BF00358AB9 /* LocalCartsManager.swift */,
 			);
 			path = Dao;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				E2B48703290DECD800358AB9 /* ServerProduct.swift in Sources */,
 				E2B48709290DF98000358AB9 /* ProductPageViewModel.swift in Sources */,
 				E2B48700290DEB5E00358AB9 /* CartDao.swift in Sources */,
+				E2B4870F290E07BF00358AB9 /* LocalCartsManager.swift in Sources */,
 				E2B486D2290DEA7700358AB9 /* ProductsDemoApp.swift in Sources */,
 				E2B48705290DEF4000358AB9 /* LocalProductsManager.swift in Sources */,
 			);

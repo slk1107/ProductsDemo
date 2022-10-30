@@ -75,6 +75,10 @@ class ProductPageViewModel: ObservableObject {
             products[index].selectedQuantity = quantity
         }
     }
+    
+    func addToCart(productId: Int) {
+        
+    }
 }
 
 
