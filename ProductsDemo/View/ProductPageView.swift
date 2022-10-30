@@ -23,6 +23,8 @@ struct ProductPageView: View {
                         Text(product.title)
                         Text("Brand: \(product.brand)")
                         Text(product.detail)
+                        Text("Price: \(product.price.currency)")
+                        Text("Stock: \(product.stock)")
                         
                         let binding = Binding<Int>(get: {
                             product.selectedQuantity
