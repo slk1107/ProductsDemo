@@ -54,7 +54,7 @@ class ProductPageViewModel: ObservableObject {
     
     func updateProductsFromDB() {
         do {
-            let results = try LocalProductsManager.shared.fetchProducts(start: 0, limit: pageSize)
+            let results = try LocalProductsManager.shared.fetchProducts(start: 0, limit: Int.max)
             self.products = results.map {.init(from: $0)}
         } catch {
             
