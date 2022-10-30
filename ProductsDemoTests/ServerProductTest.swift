@@ -19,8 +19,10 @@ final class ServerProductTest: XCTestCase {
     }
 
     func testFetch() async throws {
-        let results = try await ProductsResponse.fetch()
-        XCTAssert(results.count > 0)
+        let results = try await ProductsResponse.fetch(start: 20, limit: 20)
+        print(results)
+        XCTAssert(results.count == 20)
+        XCTAssert(results.first?.id == 21)
     }
 
     func testPerformanceExample() throws {

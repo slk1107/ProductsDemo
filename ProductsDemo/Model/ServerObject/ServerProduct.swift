@@ -13,9 +13,14 @@ class API {
 
 class ProductsResponse: Decodable {
     var products: [Product]
-    static func fetch() async throws -> [Product] {
-        try await withUnsafeThrowingContinuation { continuation in
-            AF.request(API.products, method: .get)
+    static func fetch(start: Int = 0, limit: Int = 10) async throws -> [Product] {
+        let params: Parameters = [
+            "skip": start,
+            "limit": limit
+        ]
+        return try await withUnsafeThrowingContinuation { continuation in
+            AF.request(API.products, method: .get, parameters: params)
+                
                 .responseData { response in
                     if let data = response.data {
                         do {
