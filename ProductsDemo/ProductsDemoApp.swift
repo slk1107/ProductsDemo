@@ -11,7 +11,7 @@ import SwiftUI
 struct ProductsDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProductPageView(model: .init())
         }
     }
 }

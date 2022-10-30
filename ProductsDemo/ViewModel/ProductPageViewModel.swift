@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductCellModel {
+struct ProductCellModel: Identifiable {
     let id: Int
     let title: String
     let detail: String
@@ -16,7 +16,10 @@ struct ProductCellModel {
     let rating: Double
     let stock: Int
     let brand: String
+    let thumbnail: URL?
     let thumbnails: [URL]
+    
+    var selectedQuantity = 0
     
     init(from product: ProductDao) {
         self.id = product.id
@@ -27,6 +30,7 @@ struct ProductCellModel {
         self.rating = product.rating
         self.stock = product.stock
         self.brand = product.brand
+        self.thumbnail = URL(string: product.thumbnail)
         self.thumbnails = product.thumbnail.components(separatedBy: ProductDao.imageSeparator).compactMap {
             URL(string: $0)
         }
@@ -49,7 +53,7 @@ class ProductPageViewModel: ObservableObject {
     
     func updateProductsFromDB() {
         do {
-            let results = try LocalProductsManager.shared.fetchProducts(start: 0, limit: products.count)
+            let results = try LocalProductsManager.shared.fetchProducts(start: 0, limit: 10)
             self.products = results.map {.init(from: $0)}
         } catch {
             
@@ -64,7 +68,12 @@ class ProductPageViewModel: ObservableObject {
             }
             
         }
-        
+    }
+    
+    func updateQuantity(_ quantity: Int, by id: Int) {
+        if let index = products.firstIndex(where: {$0.id == id}) {
+            products[index].selectedQuantity = quantity
+        }
     }
 }
 
