@@ -31,7 +31,7 @@ struct ProductCellModel: Identifiable {
         self.stock = product.stock
         self.brand = product.brand
         self.thumbnail = URL(string: product.thumbnail)
-        self.thumbnails = product.thumbnail.components(separatedBy: ProductDao.imageSeparator).compactMap {
+        self.thumbnails = product.thumbnails.components(separatedBy: ProductDao.imageSeparator).compactMap {
             URL(string: $0)
         }
     }
@@ -113,6 +113,7 @@ extension ProductDao {
         self.rating = product.rating
         self.stock = product.stock
         self.brand = product.brand
-        self.thumbnail = product.images.joined(separator: Self.imageSeparator)
+        self.thumbnail = product.thumbnail
+        self.thumbnails = product.images.joined(separator: Self.imageSeparator)
     }
 }

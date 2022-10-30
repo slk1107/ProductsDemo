@@ -19,6 +19,7 @@ class ProductDao: Object {
     @Persisted var stock: Int
     @Persisted var brand: String
     @Persisted var thumbnail: String
+    @Persisted var thumbnails: String
     @Persisted(originProperty: "product") var cart: LinkingObjects<CartDao>
 
 }

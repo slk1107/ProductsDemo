@@ -14,6 +14,7 @@ struct ProductPageView: View {
         NavigationStack {
             List(Array(model.products.enumerated()), id: \.element.id) { index, product in
                 HStack {
+                    let _ = print(product.thumbnail)
                     KFImage(product.thumbnail)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
