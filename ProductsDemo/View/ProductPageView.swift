@@ -11,53 +11,62 @@ import Kingfisher
 struct ProductPageView: View {
     @StateObject var model: ProductPageViewModel
     var body: some View {
-        List(model.products) { product in
-            HStack {
-                KFImage(product.thumbnail)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100)
-                
-                VStack(alignment: .leading) {
-                    Text(product.title)
-                    Text("Brand: \(product.brand)")
-                    Text(product.detail)
-                    HStack {
-                        Button(action: {
-                            let selectedQuantity = product.selectedQuantity
-                            if selectedQuantity > 1 {
-                                model.updateQuantity(selectedQuantity - 1, by: product.id)
-                            }
-                        }, label: {
-                            Image(systemName: "minus.circle")
-                        })
-                        .buttonStyle(.borderless)
-                        
-                        Text("\(product.selectedQuantity)")
-                        
-                        Button(action: {
-                            let selectedQuantity = product.selectedQuantity
-                            if selectedQuantity < product.stock {
-                                model.updateQuantity(selectedQuantity + 1, by: product.id)
-                            }
-                        }, label: {
-                            Image(systemName: "plus.circle")
-                        })
-                        .buttonStyle(.borderless)
-                        
-                        Spacer()
-                        
-                        Button(action: {
+        NavigationStack {
+            List(model.products) { product in
+                HStack {
+                    KFImage(product.thumbnail)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100)
+                    
+                    VStack(alignment: .leading) {
+                        Text(product.title)
+                        Text("Brand: \(product.brand)")
+                        Text(product.detail)
+                        HStack {
+                            Button(action: {
+                                let selectedQuantity = product.selectedQuantity
+                                if selectedQuantity > 1 {
+                                    model.updateQuantity(selectedQuantity - 1, by: product.id)
+                                }
+                            }, label: {
+                                Image(systemName: "minus.circle")
+                            })
+                            .buttonStyle(.borderless)
                             
-                        }, label: {
-                            Text("Add to cart")
-                        })
-                        .buttonStyle(.borderless)
+                            Text("\(product.selectedQuantity)")
+                            
+                            Button(action: {
+                                let selectedQuantity = product.selectedQuantity
+                                if selectedQuantity < product.stock {
+                                    model.updateQuantity(selectedQuantity + 1, by: product.id)
+                                }
+                            }, label: {
+                                Image(systemName: "plus.circle")
+                            })
+                            .buttonStyle(.borderless)
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("Add to cart")
+                            })
+                            .buttonStyle(.borderless)
+                        }
                     }
+                    
                 }
-                
+            }
+            .navigationTitle("Products")
+            .toolbar {
+                NavigationLink(destination: {
+                    CartsView()
+                }, label: { Image(systemName: "cart") })
             }
         }
+        
         .onAppear {
             model.triggerServerUpdate(start: 0, limit: 10)
         }
