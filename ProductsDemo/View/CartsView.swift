@@ -26,6 +26,9 @@ struct CartsView: View {
                     })
                     VStack(alignment: .leading) {
                         Text(product.title)
+                            .font(.title3)
+                        Text("Updated at: \(cart.updatedAt.formatted())")
+                            .foregroundColor(.gray)
                         QuantitySelectionView(selectedQuantity: binding, limit: product.stock)
                     }
                 }
