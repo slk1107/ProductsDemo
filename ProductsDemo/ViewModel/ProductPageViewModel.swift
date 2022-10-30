@@ -40,6 +40,7 @@ struct ProductCellModel: Identifiable {
 class ProductPageViewModel: ObservableObject {
     
     @Published var products: [ProductCellModel] = []
+    private let pageSize = 10
     deinit {
         LocalProductsManager.shared.removeObserver(self)
     }
@@ -53,12 +54,27 @@ class ProductPageViewModel: ObservableObject {
     
     func updateProductsFromDB() {
         do {
-            let results = try LocalProductsManager.shared.fetchProducts(start: 0, limit: 10)
+            let results = try LocalProductsManager.shared.fetchProducts(start: 0, limit: pageSize)
             self.products = results.map {.init(from: $0)}
         } catch {
             
         }
     }
+    
+    func nextPage() {
+        do {
+            let results = try LocalProductsManager.shared.fetchProducts(start: products.count, limit: pageSize)
+            if results.count > 0 {
+                self.products.append(contentsOf: results.map {.init(from: $0)})
+            } else {
+                triggerServerUpdate(start: products.count, limit: pageSize)
+            }
+        } catch {
+            
+        }
+        
+    }
+    
     func triggerServerUpdate(start: Int, limit: Int) {
         // TODO: move this flow to ProductsManager
         Task {

@@ -12,7 +12,7 @@ struct ProductPageView: View {
     @StateObject var model: ProductPageViewModel
     var body: some View {
         NavigationStack {
-            List(model.products) { product in
+            List(Array(model.products.enumerated()), id: \.element.id) { index, product in
                 HStack {
                     KFImage(product.thumbnail)
                         .resizable()
@@ -43,7 +43,13 @@ struct ProductPageView: View {
                     }
                     
                 }
+                .onAppear {
+                    if index == model.products.count - 3 {
+                        model.nextPage()
+                    }
+                }
             }
+            
             .navigationTitle("Products")
             .toolbar {
                 NavigationLink(destination: {

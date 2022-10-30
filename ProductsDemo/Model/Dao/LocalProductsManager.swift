@@ -34,14 +34,14 @@ class LocalProductsManager {
         let products = realm.objects(ProductDao.self)
         
         return Array(products
-            .sorted(by: {$0.id < $1.id})[start ..< min(limit, products.count)])
+            .sorted(by: {$0.id < $1.id})[start ..< min(start + limit, products.count)])
     }
     
     func saveProducts(_ products: [ProductDao]) throws {
         let realm = try Realm()
         try realm.write {
             products.forEach {
-                realm.add($0, update: .modified)
+                realm.add($0, update: .all)
             }
         }
     }
