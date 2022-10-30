@@ -19,8 +19,9 @@
 		E2B486EF290DEA7800358AB9 /* ProductsDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B486EE290DEA7800358AB9 /* ProductsDemoUITestsLaunchTests.swift */; };
 		E2B486FD290DEB4E00358AB9 /* ProductDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B486FC290DEB4E00358AB9 /* ProductDao.swift */; };
 		E2B48700290DEB5E00358AB9 /* CartDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B486FF290DEB5E00358AB9 /* CartDao.swift */; };
-		E2B48703290DECD800358AB9 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48702290DECD800358AB9 /* Product.swift */; };
+		E2B48703290DECD800358AB9 /* ServerProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48702290DECD800358AB9 /* ServerProduct.swift */; };
 		E2B48705290DEF4000358AB9 /* LocalProductsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48704290DEF4000358AB9 /* LocalProductsManager.swift */; };
+		E2B48707290DF81200358AB9 /* ServerProductTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B48706290DF81200358AB9 /* ServerProductTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +62,9 @@
 		E2B486EE290DEA7800358AB9 /* ProductsDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E2B486FC290DEB4E00358AB9 /* ProductDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDao.swift; sourceTree = "<group>"; };
 		E2B486FF290DEB5E00358AB9 /* CartDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDao.swift; sourceTree = "<group>"; };
-		E2B48702290DECD800358AB9 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E2B48702290DECD800358AB9 /* ServerProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProduct.swift; sourceTree = "<group>"; };
 		E2B48704290DEF4000358AB9 /* LocalProductsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalProductsManager.swift; sourceTree = "<group>"; };
+		E2B48706290DF81200358AB9 /* ServerProductTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProductTest.swift; sourceTree = "<group>"; };
 		ED89C4E1D1AFC509C06931A2 /* Pods-ProductsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductsDemoTests/Pods-ProductsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B486E2290DEA7800358AB9 /* ProductsDemoTests.swift */,
+				E2B48706290DF81200358AB9 /* ServerProductTest.swift */,
 			);
 			path = ProductsDemoTests;
 			sourceTree = "<group>";
@@ -198,7 +201,7 @@
 		E2B48701290DECC100358AB9 /* ServerObject */ = {
 			isa = PBXGroup;
 			children = (
-				E2B48702290DECD800358AB9 /* Product.swift */,
+				E2B48702290DECD800358AB9 /* ServerProduct.swift */,
 			);
 			path = ServerObject;
 			sourceTree = "<group>";
@@ -443,7 +446,7 @@
 			files = (
 				E2B486D4290DEA7700358AB9 /* ContentView.swift in Sources */,
 				E2B486FD290DEB4E00358AB9 /* ProductDao.swift in Sources */,
-				E2B48703290DECD800358AB9 /* Product.swift in Sources */,
+				E2B48703290DECD800358AB9 /* ServerProduct.swift in Sources */,
 				E2B48700290DEB5E00358AB9 /* CartDao.swift in Sources */,
 				E2B486D2290DEA7700358AB9 /* ProductsDemoApp.swift in Sources */,
 				E2B48705290DEF4000358AB9 /* LocalProductsManager.swift in Sources */,
@@ -454,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B48707290DF81200358AB9 /* ServerProductTest.swift in Sources */,
 				E2B486E3290DEA7800358AB9 /* ProductsDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
